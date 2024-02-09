@@ -4,6 +4,8 @@ Flake8 plugin to detect deprecated imports deprecated in Qiskit 1.0
 
 ## Install
 
+You might want to do this using [`pipx`](https://github.com/pypa/pipx) or in a separate virtual environment.
+
 ```sh
 pip install flake8
 pip install git+https://github.com/frankharkins/flake8-qiskit-migration
