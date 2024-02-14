@@ -5,7 +5,7 @@ import importlib.metadata
 from .deprecated_paths import DEPRECATED_PATHS, EXCEPTIONS
 
 
-def deprecation_message(path: str) -> str | None:
+def deprecation_message(path: str, original_import_path: str | None = None) -> str | None:
     """
     Build deprecation message from `DEPRECATED_PATHS` dict.
 
@@ -16,14 +16,15 @@ def deprecation_message(path: str) -> str | None:
         str: Deprecation message if path is deprecated
         None: If no deprecations detected
     """
+    original_import_path = original_import_path or path
     if "." not in path:
         return None
     if path in EXCEPTIONS:
         return None
     if path not in DEPRECATED_PATHS:
         parent = ".".join(path.split(".")[:-1])
-        return deprecation_message(parent)
-    return f"QKT100: {path} is deprecated" + DEPRECATED_PATHS[path]
+        return deprecation_message(parent, original_import_path)
+    return f"QKT100: " + DEPRECATED_PATHS[path].format(original_import_path)
 
 
 class Visitor(ast.NodeVisitor):
@@ -54,13 +55,16 @@ class Visitor(ast.NodeVisitor):
             name = mapping.get(name, name)
         return name
 
-    def report_if_deprecated(self, path: str, node) -> None:
+    def report_if_deprecated(self, path: str, node) -> bool:
         """
         Adds path to problems if deprecated, ignores otherwise
+        Returns True if problem was reported
         """
         msg = deprecation_message(path)
         if msg is not None:
             self.problems.append(Problem(node, msg))
+            return True
+        return False
 
     def visit_Import(self, node: ast.Import) -> None:
         for alias in node.names:
@@ -85,8 +89,8 @@ class Visitor(ast.NodeVisitor):
                 return f"{parents}.{node.attr}"
 
         path = _get_parents(node)
-        self.report_if_deprecated(path, node)
-        self.generic_visit(node)
+        if not self.report_if_deprecated(path, node):
+            self.generic_visit(node)
 
     # Push / pop scopes for aliases
     def visit_FunctionDef(self, node: ast.FunctionDef):

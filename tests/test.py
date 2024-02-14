@@ -24,9 +24,9 @@ def test_simple_import_path():
     import numpy
     """
     assert _results(code) == {
-        "3:0 QKT100: qiskit.extensions is deprecated; most objects have been moved to `qiskit.circuit.library` (see <link-to-guide>)",
-        "4:0 QKT100: qiskit.extensions is deprecated; most objects have been moved to `qiskit.circuit.library` (see <link-to-guide>)",
-        "5:0 QKT100: qiskit.quantum_info.synthesis.OneQubitEulerDecomposer is deprecated; replace with `qiskit.synthesis.one_qubit.OneQubitEulerDecomposer`",
+        "3:0 QKT100: qiskit.extensions has been removed; most objects have been moved to `qiskit.circuit.library` (see <link-to-guide>)",
+        "4:0 QKT100: qiskit.extensions.item has been removed; most objects have been moved to `qiskit.circuit.library` (see <link-to-guide>)",
+        "5:0 QKT100: qiskit.quantum_info.synthesis.OneQubitEulerDecomposer has moved to `qiskit.synthesis.one_qubit.OneQubitEulerDecomposer`",
     }
 
 
@@ -38,8 +38,8 @@ def test_simple_from_import_path():
     from qiskit.quantum_info.synthesis import OtherNonDeprecatedClass as XXDecomposer
     """
     assert _results(code) == {
-        "2:0 QKT100: qiskit.quantum_info.synthesis.OneQubitEulerDecomposer is deprecated; replace with `qiskit.synthesis.one_qubit.OneQubitEulerDecomposer`",
-        "3:0 QKT100: qiskit.quantum_info.synthesis.XXDecomposer is deprecated; replace with `qiskit.synthesis.two_qubits.XXDecomposer`",
+        "2:0 QKT100: qiskit.quantum_info.synthesis.OneQubitEulerDecomposer has moved to `qiskit.synthesis.one_qubit.OneQubitEulerDecomposer`",
+        "3:0 QKT100: qiskit.quantum_info.synthesis.XXDecomposer has moved to `qiskit.synthesis.two_qubits.XXDecomposer`",
     }
 
 
@@ -51,8 +51,8 @@ def test_module_attribute_later_in_script():
     allowed = qiskit.quantum_info.synthesis.AllowedPath
     """
     assert _results(code) == {
-        "3:6 QKT100: qiskit.quantum_info.synthesis.XXDecomposer is deprecated; replace with `qiskit.synthesis.two_qubits.XXDecomposer`",
-        "4:0 QKT100: qiskit.quantum_info.synthesis.OneQubitEulerDecomposer is deprecated; replace with `qiskit.synthesis.one_qubit.OneQubitEulerDecomposer`",
+        "3:6 QKT100: qiskit.quantum_info.synthesis.XXDecomposer has moved to `qiskit.synthesis.two_qubits.XXDecomposer`",
+        "4:0 QKT100: qiskit.quantum_info.synthesis.OneQubitEulerDecomposer has moved to `qiskit.synthesis.one_qubit.OneQubitEulerDecomposer`",
     }
 
 
@@ -62,7 +62,7 @@ def test_module_attribute_later_in_script_with_alias():
     qk.extensions.thing()
     """
     assert _results(code) == {
-        "3:0 QKT100: qiskit.extensions is deprecated; most objects have been moved to `qiskit.circuit.library` (see <link-to-guide>)",
+        "3:0 QKT100: qiskit.extensions.thing has been removed; most objects have been moved to `qiskit.circuit.library` (see <link-to-guide>)",
     }
 
 
@@ -77,7 +77,7 @@ def test_alias_scope():
     print(qk.extensions.thing())  # safe import
     """
     assert _results(code) == {
-        "6:11 QKT100: qiskit.extensions is deprecated; most objects have been moved to `qiskit.circuit.library` (see <link-to-guide>)",
+        "6:11 QKT100: qiskit.extensions.thing has been removed; most objects have been moved to `qiskit.circuit.library` (see <link-to-guide>)",
     }
 
     code = """
@@ -90,7 +90,7 @@ def test_alias_scope():
     print(qk.extensions.thing())  # deprecated
     """
     assert _results(code) == {
-        "8:6 QKT100: qiskit.extensions is deprecated; most objects have been moved to `qiskit.circuit.library` (see <link-to-guide>)",
+        "8:6 QKT100: qiskit.extensions.thing has been removed; most objects have been moved to `qiskit.circuit.library` (see <link-to-guide>)",
     }
 
 def test_exceptions():
@@ -104,7 +104,7 @@ def test_basicaer():
     from qiskit import BasicAer
     """
     assert _results(code) == {
-        "2:0 QKT100: qiskit.BasicAer is deprecated; either install separate `qiskit-aer` package and replace import with `qiskit_aer.Aer`, or follow <link-to-guide>"
+        "2:0 QKT100: qiskit.BasicAer has been removed; either install separate `qiskit-aer` package and replace import with `qiskit_aer.Aer`, or follow <link-to-guide>#basicaer-1"
     }
 
 def test_providers():
@@ -114,5 +114,5 @@ def test_providers():
     from qiskit.providers.fake_provider import FakeBackend
     """
     assert _results(code) == {
-        "2:0 QKT100: qiskit.providers.fake_provider is deprecated (with some exceptions); install separate `qiskit-ibm-runtime` and replace with `qiskit_ibm_runtime.fake_provider`"
+        "2:0 QKT100: qiskit.providers.fake_provider.FakeCairo has moved; install separate `qiskit-ibm-runtime` package and replace `qiskit.providers.fake_provider` with `qiskit_ibm_runtime.fake_provider`"
     }
