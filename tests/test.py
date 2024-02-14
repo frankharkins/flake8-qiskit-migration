@@ -80,8 +80,39 @@ def test_alias_scope():
         "6:11 QKT100: qiskit.extensions is deprecated; most objects have been moved to `qiskit.circuit.library` (see <link-to-guide>)",
     }
 
+    code = """
+    import qiskit as qk
+
+    def my_function():
+        import safe_module as qk
+        return qk.extensions.thing()  # safe
+
+    print(qk.extensions.thing())  # deprecated
+    """
+    assert _results(code) == {
+        "8:6 QKT100: qiskit.extensions is deprecated; most objects have been moved to `qiskit.circuit.library` (see <link-to-guide>)",
+    }
+
 def test_exceptions():
     code = """
     from qiskit.fake_provider.utils import json_decoder
     """
     assert _results(code) == set()
+
+def test_basicaer():
+    code = """
+    from qiskit import BasicAer
+    """
+    assert _results(code) == {
+        "2:0 QKT100: qiskit.BasicAer is deprecated; either install separate `qiskit-aer` package and replace import with `qiskit_aer.Aer`, or follow <link-to-guide>"
+    }
+
+def test_providers():
+    code = """
+    from qiskit.providers.fake_provider import FakeCairo
+    from qiskit.providers.fake_provider import GenericBackendV2
+    from qiskit.providers.fake_provider import FakeBackend
+    """
+    assert _results(code) == {
+        "2:0 QKT100: qiskit.providers.fake_provider is deprecated (with some exceptions); install separate `qiskit-ibm-runtime` and replace with `qiskit_ibm_runtime.fake_provider`"
+    }
