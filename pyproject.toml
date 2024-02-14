@@ -4,4 +4,4 @@ version = "0.1.0"
 dependencies = [ "flake8", ]
 
 [project.entry-points."flake8.extension"]
-QKT100 = "flake8_qiskit_migration:Plugin"
+QKT100 = "flake8_qiskit_migration.plugin:Plugin"

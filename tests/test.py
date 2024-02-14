@@ -1,7 +1,7 @@
 import ast
 from textwrap import dedent
 
-from flake8_qiskit_migration import Plugin
+from flake8_qiskit_migration.plugin import Plugin
 
 
 def _results(code: str):
