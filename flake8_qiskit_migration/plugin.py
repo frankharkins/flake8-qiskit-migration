@@ -128,9 +128,8 @@ class Plugin:
 
 @dataclass
 class Problem:
-    def __init__(self, node, msg):
-        self.node = node
-        self.msg = msg
+    node: ast.AST
+    msg: str
 
     def format(self):
         return (self.node.lineno, self.node.col_offset, self.msg, None)
