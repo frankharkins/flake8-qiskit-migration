@@ -24,8 +24,8 @@ def test_simple_import_path():
     import numpy
     """
     assert _results(code) == {
-        "3:0 QKT100: qiskit.extensions has been removed; most objects have been moved to `qiskit.circuit.library` (see <link-to-guide>)",
-        "4:0 QKT100: qiskit.extensions.item has been removed; most objects have been moved to `qiskit.circuit.library` (see <link-to-guide>)",
+        "3:0 QKT100: qiskit.extensions has been removed; most objects have been moved to `qiskit.circuit.library` (see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features)",
+        "4:0 QKT100: qiskit.extensions.item has been removed; most objects have been moved to `qiskit.circuit.library` (see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features)",
         "5:0 QKT100: qiskit.quantum_info.synthesis.OneQubitEulerDecomposer has moved to `qiskit.synthesis.one_qubit.OneQubitEulerDecomposer`",
     }
 
@@ -62,7 +62,7 @@ def test_module_attribute_later_in_script_with_alias():
     qk.extensions.thing()
     """
     assert _results(code) == {
-        "3:0 QKT100: qiskit.extensions.thing has been removed; most objects have been moved to `qiskit.circuit.library` (see <link-to-guide>)",
+        "3:0 QKT100: qiskit.extensions.thing has been removed; most objects have been moved to `qiskit.circuit.library` (see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features)",
     }
 
 
@@ -77,7 +77,7 @@ def test_alias_scope():
     print(qk.extensions.thing())  # safe import
     """
     assert _results(code) == {
-        "6:11 QKT100: qiskit.extensions.thing has been removed; most objects have been moved to `qiskit.circuit.library` (see <link-to-guide>)",
+        "6:11 QKT100: qiskit.extensions.thing has been removed; most objects have been moved to `qiskit.circuit.library` (see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features)",
     }
 
     code = """
@@ -90,7 +90,7 @@ def test_alias_scope():
     print(qk.extensions.thing())  # deprecated
     """
     assert _results(code) == {
-        "8:6 QKT100: qiskit.extensions.thing has been removed; most objects have been moved to `qiskit.circuit.library` (see <link-to-guide>)",
+        "8:6 QKT100: qiskit.extensions.thing has been removed; most objects have been moved to `qiskit.circuit.library` (see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features)",
     }
 
 def test_exceptions():
@@ -104,7 +104,7 @@ def test_basicaer():
     from qiskit import BasicAer
     """
     assert _results(code) == {
-        "2:0 QKT100: qiskit.BasicAer has been removed; either install separate `qiskit-aer` package and replace import with `qiskit_aer.Aer`, or follow <link-to-guide>#basicaer-1"
+        "2:0 QKT100: qiskit.BasicAer has been removed; either install separate `qiskit-aer` package and replace import with `qiskit_aer.Aer`, or follow https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#providers.basicaer"
     }
 
 def test_providers():

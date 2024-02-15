@@ -12,7 +12,7 @@ ALGORITHMS = {
 }
 
 CONVERTERS = {
-    "qiskit.converters.ast_to_dag": "{} has been removed; load QASM directly to a QuantumCircuit instead  (see <link-to-guide>)",
+    "qiskit.converters.ast_to_dag": "{} has been removed; load QASM directly to a QuantumCircuit instead  (see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features)",
 }
 
 OPFLOW = {
@@ -21,9 +21,9 @@ OPFLOW = {
 
 PROVIDERS = {
     "qiskit.Aer": "{} has moved; install separate `qiskit-aer` package and replace `qiskit.Aer` with `qiskit_aer.Aer`",
-    "qiskit.BasicAer": "{} has been removed; either install separate `qiskit-aer` package and replace import with `qiskit_aer.Aer`, or follow <link-to-guide>#basicaer-1",
+    "qiskit.BasicAer": "{} has been removed; either install separate `qiskit-aer` package and replace import with `qiskit_aer.Aer`, or follow https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#providers.basicaer",
     "qiskit.providers.aer": "{} has been removed; install separate `qiskit-aer` package and replace `qiskit.aer` with `qiskit_aer`",
-    "qiskit.providers.basicaer": "{} has been removed; see <link-to-guide>",
+    "qiskit.providers.basicaer": "{} has been removed; see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features",
     "qiskit.providers.fake_provider": "{} has moved; install separate `qiskit-ibm-runtime` package and replace `qiskit.providers.fake_provider` with `qiskit_ibm_runtime.fake_provider`",
     "qiskit.providers.fake_provider.FakeQasmBackend": "{} has moved; replace with `qiskit_ibm_runtime.fake_provider.fake_qasm_backend.FakeQasmBackend`",
     "qiskit.providers.fake_provider.FakePulseBackend": "{} has moved; replace with qiskit_ibm_runtime.fake_provider.fake_pulse_backend.FakePulseBackend",
@@ -40,37 +40,37 @@ PULSE = {
     "qiskit.pulse.library.parametric_pulses.Drag": "{} has been removed; use alternative `qiskit.pulse.symbolic_pulses.Drag`",
     "qiskit.pulse.library.parametric_pulses.Gaussian": "{} has been removed; use alternative `qiskit.pulse.symbolic_pulses.Gaussian`",
     "qiskit.pulse.library.parametric_pulses.GaussianSquare": "{} has been removed; use alternative `qiskit.pulse.symbolic_pulses.GaussianSquare`",
-    "qiskit.pulse.builder.call_gate": "{} has been removed; see <link-to-guide>",
-    "qiskit.pulse.builder.cx": "{} has been removed; see <link-to-guide>#injecting-circuit-gate-operations",
-    "qiskit.pulse.builder.u1": "{} has been removed; see <link-to-guide>#injecting-circuit-gate-operations",
-    "qiskit.pulse.builder.u2": "{} has been removed; see <link-to-guide>#injecting-circuit-gate-operations",
-    "qiskit.pulse.builder.u3": "{} has been removed; see <link-to-guide>#injecting-circuit-gate-operations",
-    "qiskit.pulse.builder.x": "{} has been removed; see <link-to-guide>#injecting-circuit-gate-operations",
-    "qiskit.pulse.call_gate": "{} has been removed; see <link-to-guide>#injecting-circuit-gate-operations",
-    "qiskit.pulse.cx": "{} has been removed; see <link-to-guide>#injecting-circuit-gate-operations",
-    "qiskit.pulse.u1": "{} has been removed; see <link-to-guide>#injecting-circuit-gate-operations",
-    "qiskit.pulse.u2": "{} has been removed; see <link-to-guide>#injecting-circuit-gate-operations",
-    "qiskit.pulse.u3": "{} has been removed; see <link-to-guide>#injecting-circuit-gate-operations",
-    "qiskit.pulse.x": "{} has been removed; see <link-to-guide>#injecting-circuit-gate-operations",
-    "qiskit.pulse.builder.build.default_transpiler_settings": "{} has been removed; see <link-to-guide>#builderbuild",
-    "qiskit.pulse.builder.build.default_circuit_scheduler_settings": "{} has been removed; see <link-to-guide>#builderbuild",
-    "qiskit.pulse.builder.active_transpiler_settings": "{} has been removed; see <link-to-guide>#builderbuild",
-    "qiskit.pulse.builder.active_circuit_scheduler_settings": "{} has been removed; see <link-to-guide>#builderbuild",
-    "qiskit.pulse.builder.transpiler_settings": "{} has been removed; see <link-to-guide>#builderbuild",
-    "qiskit.pulse.builder.circuit_scheduler_settings": "{} has been removed; see <link-to-guide>#builderbuild",
-    "qiskit.pulse.library.constant": "{} has been removed; use `qiskit.pulse.Constant` and its `get_waveform()` method (see <link-to-guide>#library)",
-    "qiskit.pulse.library.zero": "{} has been removed; see <link-to-guide>#library",
-    "qiskit.pulse.library.square": "{} has been removed; use `qiskit.pulse.Square` and its `get_waveform()` method (see <link-to-guide>#library)",
-    "qiskit.pulse.library.sawtooth": "{} has been removed; use `qiskit.pulse.Sawtooth` and its `get_waveform()` method (see <link-to-guide>#library)",
-    "qiskit.pulse.library.triangle": "{} has been removed; use `qiskit.pulse.Triangle` and its `get_waveform()` method (see <link-to-guide>#library)",
-    "qiskit.pulse.library.cos": "{} has been removed; use `qiskit.pulse.Cos` and its `get_waveform()` method (see <link-to-guide>#library)",
-    "qiskit.pulse.library.sin": "{} has been removed; use `qiskit.pulse.Sin` and its `get_waveform()` method (see <link-to-guide>#library)",
-    "qiskit.pulse.library.gaussian": "{} has been removed; use `qiskit.pulse.Gaussian` and its `get_waveform()` method (see <link-to-guide>#library)",
-    "qiskit.pulse.library.gaussian_deriv": "{} has been removed; use `qiskit.pulse.GaussianDeriv` and its `get_waveform()` method (see <link-to-guide>#library)",
-    "qiskit.pulse.library.sech": "{} has been removed; use `qiskit.pulse.Sech` and its `get_waveform()` method (see <link-to-guide>#library)",
-    "qiskit.pulse.library.sech_deriv": "{} has been removed; use `qiskit.pulse.SechDeriv` and its `get_waveform()` method (see <link-to-guide>#library)",
-    "qiskit.pulse.library.gaussian_square": "{} has been removed; use `qiskit.pulse.GaussianSquare` and its `get_waveform()` method (see <link-to-guide>#library)",
-    "qiskit.pulse.library.drag": "{} has been removed; use `qiskit.pulse.Drag` and its `get_waveform()` method (see <link-to-guide>#library)",
+    "qiskit.pulse.builder.call_gate": "{} has been removed; see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features",
+    "qiskit.pulse.builder.cx": "{} has been removed; see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#injecting-circuit-gate-operations",
+    "qiskit.pulse.builder.u1": "{} has been removed; see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#injecting-circuit-gate-operations",
+    "qiskit.pulse.builder.u2": "{} has been removed; see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#injecting-circuit-gate-operations",
+    "qiskit.pulse.builder.u3": "{} has been removed; see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#injecting-circuit-gate-operations",
+    "qiskit.pulse.builder.x": "{} has been removed; see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#injecting-circuit-gate-operations",
+    "qiskit.pulse.call_gate": "{} has been removed; see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#injecting-circuit-gate-operations",
+    "qiskit.pulse.cx": "{} has been removed; see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#injecting-circuit-gate-operations",
+    "qiskit.pulse.u1": "{} has been removed; see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#injecting-circuit-gate-operations",
+    "qiskit.pulse.u2": "{} has been removed; see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#injecting-circuit-gate-operations",
+    "qiskit.pulse.u3": "{} has been removed; see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#injecting-circuit-gate-operations",
+    "qiskit.pulse.x": "{} has been removed; see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#injecting-circuit-gate-operations",
+    "qiskit.pulse.builder.build.default_transpiler_settings": "{} has been removed; see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#builder.build",
+    "qiskit.pulse.builder.build.default_circuit_scheduler_settings": "{} has been removed; see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#builder.build",
+    "qiskit.pulse.builder.active_transpiler_settings": "{} has been removed; see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#builder.build",
+    "qiskit.pulse.builder.active_circuit_scheduler_settings": "{} has been removed; see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#builder.build",
+    "qiskit.pulse.builder.transpiler_settings": "{} has been removed; see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#builder.build",
+    "qiskit.pulse.builder.circuit_scheduler_settings": "{} has been removed; see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#builder.build",
+    "qiskit.pulse.library.constant": "{} has been removed; use `qiskit.pulse.Constant` and its `get_waveform()` method (see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#pulse.library)",
+    "qiskit.pulse.library.zero": "{} has been removed; see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#pulse.library",
+    "qiskit.pulse.library.square": "{} has been removed; use `qiskit.pulse.Square` and its `get_waveform()` method (see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#pulse.library)",
+    "qiskit.pulse.library.sawtooth": "{} has been removed; use `qiskit.pulse.Sawtooth` and its `get_waveform()` method (see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#pulse.library)",
+    "qiskit.pulse.library.triangle": "{} has been removed; use `qiskit.pulse.Triangle` and its `get_waveform()` method (see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#pulse.library)",
+    "qiskit.pulse.library.cos": "{} has been removed; use `qiskit.pulse.Cos` and its `get_waveform()` method (see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#pulse.library)",
+    "qiskit.pulse.library.sin": "{} has been removed; use `qiskit.pulse.Sin` and its `get_waveform()` method (see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#pulse.library)",
+    "qiskit.pulse.library.gaussian": "{} has been removed; use `qiskit.pulse.Gaussian` and its `get_waveform()` method (see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#pulse.library)",
+    "qiskit.pulse.library.gaussian_deriv": "{} has been removed; use `qiskit.pulse.GaussianDeriv` and its `get_waveform()` method (see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#pulse.library)",
+    "qiskit.pulse.library.sech": "{} has been removed; use `qiskit.pulse.Sech` and its `get_waveform()` method (see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#pulse.library)",
+    "qiskit.pulse.library.sech_deriv": "{} has been removed; use `qiskit.pulse.SechDeriv` and its `get_waveform()` method (see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#pulse.library)",
+    "qiskit.pulse.library.gaussian_square": "{} has been removed; use `qiskit.pulse.GaussianSquare` and its `get_waveform()` method (see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#pulse.library)",
+    "qiskit.pulse.library.drag": "{} has been removed; use `qiskit.pulse.Drag` and its `get_waveform()` method (see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#pulse.library)",
 }
 
 TRANSPILER = {
@@ -79,17 +79,17 @@ TRANSPILER = {
     "qiskit.transpiler.synthesis.graysynth": "{} has been removed; replace with `qiskit.synthesis.synth_cnot_phase_aam`",
     "qiskit.transpiler.synthesis.cnot_synth": "{} has been removed; replace with`qiskit.synthesis.synth_cnot_count_full_pmh`",
     "qiskit.transpiler.passes.NoiseAdaptiveLayout": "{} has been removed; migrate to `qiskit.transpiler.passes.VF2PostLayout`",
-    "qiskit.transpiler.passes.CrosstalkAdaptiveSchedule": "{} as been removed; see <link-to-guide>##passes",
+    "qiskit.transpiler.passes.CrosstalkAdaptiveSchedule": "{} as been removed; see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#transpiler.passes",
     "qiskit.transpiler.passes.Unroller": "{} has been removed; use alternative `qiskit.transpiler.passes.BasisTranslator`",
 }
 
 EXECUTE = {
-    "qiskit.execute": "{} has been removed; explicitly transpile and run the circuit instead (see <link-to-guide>#execute)",
-    "qiskit.execute_function": "{} has been removed; explicitly transpile and run the circuit instead (see <link-to-guide>#execute)",
+    "qiskit.execute": "{} has been removed; explicitly transpile and run the circuit instead (see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#execute)",
+    "qiskit.execute_function": "{} has been removed; explicitly transpile and run the circuit instead (see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#execute)",
 }
 
 EXTENSIONS = {
-    "qiskit.extensions": "{} has been removed; most objects have been moved to `qiskit.circuit.library` (see <link-to-guide>)",
+    "qiskit.extensions": "{} has been removed; most objects have been moved to `qiskit.circuit.library` (see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features)",
     "qiskit.extensions.DiagonalGate": "{} has been removed; replace with `qiskit.circuit.library.DiagonalGate`",
     "qiskit.extensions.HamiltonianGate": "{} has been removed; replace with `qiskit.circuit.library.HamiltonianGate`",
     "qiskit.extensions.Initialize": "{} has been removed; replace with `qiskit.circuit.library.Initialize`",
@@ -113,7 +113,7 @@ QUANTUM_INFO = {
 }
 
 QASM = {
-    "qiskit.qasm": "; use qiskit.qasm2 instead (see <link-to-guide>#qiskitqasm)",
+    "qiskit.qasm": "{} has been removed; use qiskit.qasm2 instead (see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#qiskit.qasm)",
 }
 
 TOOLS = {
