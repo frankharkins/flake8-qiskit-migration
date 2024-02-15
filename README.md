@@ -27,7 +27,9 @@ at the root of your Python project, then `<path-to-source>` is `./`.
 ## With Python venv
 
 If you don't want to use `pipx`, you can manually create a new environment for
-the linter. Delete the environment when you're finished.
+the linter. This approach also lets you use
+[`nbqa`](https://github.com/nbQA-dev/nbQA) to check Jupyter notebooks. Delete
+the environment when you're finished.
 
 ```sh
 # Make new environment and install
@@ -37,6 +39,10 @@ pip install flake8-qiskit-migration
 
 # Run plugin on Python code
 flake8 --select QKT100 <path-to-source>  # e.g. `src/`
+
+# Run plugin on notebooks
+pip install nbqa
+nbqa flake8 ./**/*.ipynb --select QKT100
 
 # Deactivate and delete environment
 deactivate
