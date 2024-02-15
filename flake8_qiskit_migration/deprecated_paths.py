@@ -81,6 +81,8 @@ TRANSPILER = {
     "qiskit.transpiler.passes.NoiseAdaptiveLayout": "{} has been removed; migrate to `qiskit.transpiler.passes.VF2PostLayout`",
     "qiskit.transpiler.passes.CrosstalkAdaptiveSchedule": "{} as been removed; see https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features#transpiler.passes",
     "qiskit.transpiler.passes.Unroller": "{} has been removed; use alternative `qiskit.transpiler.passes.BasisTranslator`",
+    "qiskit.transpiler.preset_passmanagers.common.get_vf2_call_limit": "{} has been removed; migrate to `qiskit.transpiler.preset_passmanagers.common.get_vf2_limits` (note the plural)",
+    "qiskit.transpiler.passes.LinearFunctionsSynthesis": "{} has been removed; migrate to `qiskit.transpiler.HighLevelSynthesis`",
 }
 
 EXECUTE = {
@@ -136,6 +138,9 @@ UTILS = {
 
 VISUALIZATION = {
     "qiskit.visualization.qcstyle": "{} has moved; replace with `qiskit.visualization.circuit.qcstyle`",
+    "qiskit.visualization.state_visualization.num_to_latex_ket": "{} has been removed. For similar functionality, see Sympy's `nsimplify` and `latex` functions.",
+    "qiskit.visualization.state_visualization.numbers_to_latex_terms": "{} has been removed. For similar functionality, see Sympy's `nsimplify` and `latex` functions.",
+
 }
 
 OTHER = {
