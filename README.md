@@ -12,10 +12,22 @@ This tool is to help you quickly identify deprecated imports and work out how
 to fix them. This tool is not perfect and will make some mistakes, so make sure
 to test your project thoroughly after migrating.
 
+## Through pipx
+
+We recommend using this plugin through [`pipx`](https://github.com/pypa/pipx).
+If you have `pipx` installed, simply run:
+
+```sh
+pipx run flake8-qiskit-migration <path-to-source>
+```
+
+This will install this plugin in a temporary environment and run it. If you're
+at the root of your Python project, then `<path-to-source>` is `./`.
+
 ## With Python venv
 
-Create a new environment for the linter, run it, and delete the environment
-when you're finished.
+If you don't want to use `pipx`, you can manually create a new environment for
+the linter. Delete the environment when you're finished.
 
 ```sh
 # Make new environment and install
