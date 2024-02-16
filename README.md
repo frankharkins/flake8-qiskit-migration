@@ -1,6 +1,8 @@
 # flake8-qiskit-migration
 
-Flake8 plugin to detect imports deprecated in Qiskit 1.0
+Flake8 plugin to detect imports deprecated in Qiskit 1.0. For a full migration
+guide, see [Qiskit 1.0 feature
+changes](https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-features).
 
 > [!WARNING]
 > This tool only detects deprecated import paths, it does not detect use of
