@@ -1,6 +1,6 @@
 [project]
 name = "flake8-qiskit-migration"
-version = "0.3.0"
+version = "0.4.0"
 dependencies = [ "flake8", ]
 authors = [
   { name="Frank Harkins", email="frankharkins@hotmail.co.uk" },
