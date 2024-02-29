@@ -116,3 +116,13 @@ def test_providers():
     assert _results(code) == {
         "2:0 QKT100: qiskit.providers.fake_provider.FakeCairo has moved; install separate `qiskit-ibm-runtime` package and replace `qiskit.providers.fake_provider` with `qiskit_ibm_runtime.fake_provider`"
     }
+
+def test_utils():
+    code = """
+    from qiskit.utils import valid_import
+    from qiskit.utils import QuantumInstance, entangler_map
+    """
+    assert _results(code) == {
+        "3:0 QKT100: qiskit.utils.entangler_map has been removed with no replacement",
+        "3:0 QKT100: qiskit.utils.QuantumInstance has been removed; see https://docs.quantum.ibm.com/api/migration-guides/qiskit-quantum-instance"
+    }

@@ -132,7 +132,10 @@ TEST = {
 }
 
 UTILS = {
-    "qiskit.utils": "{} has been removed with no replacement",
+    "qiskit.utils.arithmetic": "{} has been removed with no replacement",
+    "qiskit.utils.circuit_utils": "{} has been removed with no replacement",
+    "qiskit.utils.entangler_map": "{} has been removed with no replacement",
+    "qiskit.utils.name_unnamed_args": "{} has been removed with no replacement",
     "qiskit.utils.QuantumInstance": "{} has been removed; see https://docs.quantum.ibm.com/api/migration-guides/qiskit-quantum-instance",
 }
 
